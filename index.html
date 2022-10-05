@@ -1,45 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
-  <title>Momentum</title>
-</head>
-
-<body>
-  <h2 id="clock">00:00</h2>
-  <form id = "login-form" class="hidden">
-    <input 
-      required
-      maxlength="15"
-      type="text" 
-      placeholder="Type your name here"
-      style="font-size:16pt"
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css"
     />
-    <!-- <button>Log In</button> -->
-  </form>
-  <h1 class="hidden" id="greeting"></h1>
-  <form id="todo-form">
-    <input type="text" placeholder="Write a To Do here" required />
-  </form>
-  <ul id="todo-list"></ul>
-  <div id="quote">
-    <span id="quotes"></span>
-    <span id="authors"></span>
-  </div>
-  <div id="weather">
-    <span></span>
-    <span></span>
-  </div>
-  <script src="js/greetings.js"></script>
-  <script src="js/clock.js"></script>
-  <script src="js/quotes.js"></script>
-  <script src="js/background.js"></script>
-  <script src="js/todo.js"></script>
-  <script src="js/weather.js"></script>
-</body>
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Momentum</title>
+  </head>
 
+  <body>
+    <div class="container">
+      <div class="container--left">
+        <header>
+          <div class="inner">
+            <div id="date"></p>
+              <script>
+              date = new Date();
+              year = date.getFullYear();
+              month = date.getMonth() + 1;
+              day = date.getDate();
+              document.getElementById("date").innerHTML = month + " - " + day + " - " + year;
+              </script>
+            </div>
+            <h2 id="clock">00:00</h2>
+          </div>
+        </header>
+
+        <h1 class="hidden" id="greeting"></h1>
+
+        <div class="todo">
+          <form id="todo-form">
+            <input type="text" placeholder="write your To Do" required />
+          </form>
+          <ul id="todo-list"></ul>
+        </div>
+        <form id="login-form" class="hidden">
+          <input
+            required
+            maxlength="15"
+            type="text"
+            placeholder="name"
+            style="font-size: 16pt"
+          />
+          <!-- <button>Log In</button> -->
+        </form>
+      </div>
+
+      <div class="container--right">
+        <header>
+          <div class="inner">
+            <div id="weather">
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </header>
+
+        <section class="player">
+          <video src="./video/윤하-사건의지평선.mp4" controls></video>
+        </section>
+
+        <img class="flower1" src="./img/flower1.jpg" alt="flower1" />
+        <img class="flower2" src="./img/flower2.jpg" alt="flower2" />
+
+        <div id="quote">
+          <span id="quotes"></span>
+          <span class="hidden" id="authors"></span>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/greetings.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/quotes.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/weather.js"></script>
+  </body>
 </html>
